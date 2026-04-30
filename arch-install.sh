@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Packages
-pacman -S --noconfirm openssh grub htop vim man bat
+pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace
 
 # Aliases
 echo alias cat=/bin/bat
+echo alias ip='ip -br'
 
 # Time
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
