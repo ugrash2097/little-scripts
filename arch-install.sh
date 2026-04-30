@@ -1,11 +1,20 @@
 #!/bin/bash
 
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <hostname>"
+    exit 1
+fi
+
 # Packages
 pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace
 
 # Aliases
 echo "alias cat=/bin/bat" >> /root/.bashrc
 echo "alias ip='ip -br'" >> /root/.bashrc
+
+cat << 'EOF' > /root/.bash_profile
+[[ -f ~/.bashrc ]] && source ~/.bashrc
+EOF
 
 # Time
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
