@@ -66,7 +66,7 @@ syntax on
 EOF
 
 # htop config
-mkdir /root/.config/htop
+mkdir -p /root/.config/htop
 cat << 'EOF' > /root/.config/htop/htoprc
 # Beware! This file is rewritten by htop when settings are changed in the interface.
 # The parser is also very primitive, and not human-friendly.
