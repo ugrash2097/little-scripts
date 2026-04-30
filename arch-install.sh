@@ -21,7 +21,7 @@ DHCP=yes
 EOF
 systemctl enable systemd-networkd
 # DNS
-systemctl resolve systemd-resolved
+systemctl enable systemd-resolved
 # InitRAMFS
 mkinitcpio -P
 # Bootloader
