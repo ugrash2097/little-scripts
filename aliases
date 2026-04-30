@@ -1,0 +1,2 @@
+alias cat=/bin/bat
+alias ip='ip -br'
