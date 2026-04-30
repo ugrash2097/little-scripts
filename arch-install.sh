@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # Packages
-pacman -S --noconfirm openssh grub htop vim man
+pacman -S --noconfirm openssh grub htop vim man bat
+
+# Aliases
+echo alias cat=/bin/bat
 
 # Time
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
