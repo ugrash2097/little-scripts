@@ -6,7 +6,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 # Packages
-pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace
+pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace lsof
 
 # Aliases
 echo "alias cat=/bin/bat" >> /root/.bashrc
