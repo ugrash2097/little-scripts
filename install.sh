@@ -6,7 +6,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 # Packages
-pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace lsof syslog-ng
+pacman -S --noconfirm openssh grub htop vim man bat dog ltrace strace lsof syslog-ng grafana-alloy
 
 # Aliases
 cp aliases /root/.bashrc
@@ -53,6 +53,10 @@ cp htoprc /root/.config/htop/htoprc
 # Syslog-ng
 cp syslog-ng.conf /etc/syslog-ng
 systemctl enable syslog-ng@default
+
+# Grafana-Alloy
+cp config.alloy /etc/grafana-alloy/
+systemctl enable grafana-alloy
 
 # Messages
 echo Please set root passwd

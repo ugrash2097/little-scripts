@@ -1,0 +1,18 @@
+prometheus.exporter.unix "local" {
+  include_exporter_metrics = true
+  disable_collectors        = []
+}
+
+prometheus.scrape "unix" {
+  targets    = prometheus.exporter.unix.local.targets
+  forward_to = [prometheus.remote_write.default.receiver]
+
+  scrape_interval = "15s"
+}
+
+prometheus.remote_write "default" {
+  endpoint {
+    url = "http://grafana.maison:9090/api/v1/write"
+
+  }
+}
